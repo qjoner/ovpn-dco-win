@@ -1,0 +1,43 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: configure
+      run: ./configure
+    - name: make
+      run: make
+    - name: make check
+      run: make check
+    - name: make distcheck
+      run: make distcheck
+            - Nama : Tembolok
+  kegunaan: tindakan/cache@v4.0.0
+  dengan:
+    # Daftar file, direktori, dan pola wildcard untuk di-cache dan dipulihkan
+    jalur:
+    # Kunci eksplisit untuk memulihkan dan menyimpan cache
+    kunci:
+    # Daftar kunci yang diurutkan untuk digunakan untuk memulihkan cache basi jika tidak ada cache yang terjadi pada kunci. Catatan `cache-hit` mengembalikan false dalam kasus ini.
+    kunci pemulihan: # opsional
+    # Ukuran potongan yang digunakan untuk membagi file besar selama pengunggahan, dalam byte
+    unggah-ukuran potongan: # opsional
+    # Boolean opsional ketika diaktifkan, memungkinkan pelari windows untuk menyimpan atau memulihkan cache yang dapat dipulihkan atau disimpan masing-masing di platform lain
+    aktifkanCrossOsArchive: # opsional, defaultnya salah
+    # Gagalkan alur kerja jika entri cache tidak ditemukan
+    fail-on-cache-miss: # opsional, defaultnya salah
+    # Periksa apakah ada entri cache untuk input yang diberikan (kunci, kunci pemulihan) tanpa mengunduh cache
+    hanya pencarian: # opsional, defaultnya salah
+    # Jalankan langkah posting untuk menyimpan cache meskipun langkah sebelumnya gagal
+    simpan-selalu: # opsional, defaultnya salah
+          
